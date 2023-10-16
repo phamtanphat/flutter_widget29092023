@@ -10,6 +10,7 @@ class MyHomePage extends StatefulWidget {
 
 // State Object
 class _MyHomePageState extends State<MyHomePage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,33 +18,31 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("My home page"),
       ),
       body: SafeArea(
-          child: Container(
-              constraints: BoxConstraints.expand(),
-              child: Align(
-                alignment: Alignment.center,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                        color: Colors.red,
-                        child:
-                            Text("Red", style: TextStyle(color: Colors.white))),
-                    Container(
-                        color: Colors.blue,
-                        child: Text("Blue",
-                            style: TextStyle(color: Colors.white))),
-                    Container(
-                        color: Colors.green,
-                        child: Text("Green",
-                            style: TextStyle(color: Colors.white))),
-                    Container(
-                        color: Colors.orange,
-                        child: Text("Orange",
-                            style: TextStyle(color: Colors.white)))
-                  ],
-                ),
-              ))),
+          child:
+              Container(
+                  constraints: BoxConstraints.expand(),
+                  padding: EdgeInsets.fromLTRB(0, 100, 0, 100),
+                  child: Stack(
+                    children: [
+                        createBoxWidget(),
+                        Positioned(
+                            left: MediaQuery.of(context).size.width / 5,
+                            top: (MediaQuery.of(context).size.width / 6),
+                            child: createBoxWidget()
+                        ),
+                    ],
+                  )
+              )
+      ),
+    );
+  }
+
+  Widget createBoxWidget() {
+    return Container(
+      width: MediaQuery.of(context).size.width / 5,
+      height: (MediaQuery.of(context).size.width / 6),
+      color: Colors.red,
+      child: Center(child: Text("A")),
     );
   }
 }
