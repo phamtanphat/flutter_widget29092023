@@ -20,33 +20,33 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           constraints: BoxConstraints.expand(),
           child: Stack(
+            alignment: Alignment.center,
             children: [
-              Text("View 1"),
-              Align(
-                  alignment: Alignment.topRight,
-                  child: Text("View 2")
+              Container(
+                width: 200,
+                height: 200,
+                decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(10)
+                ),
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    Positioned(
+                      left: -20,
+                      child: Container(
+                        width: 100,
+                        height: 100,
+                        color: Colors.blue,
+                        child: Text("View B"),
+                      ),
+                    ),
+                  ],
+                )
               ),
-              Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text("View 3")
-              ),
-              Align(
-                  alignment: Alignment.bottomRight,
-                  child: Text("View 4")
-              ),
-              Align(
-                  alignment: Alignment.center,
-                  child: Text("View 5")
-              ),
-              Positioned(
-                  top: 100,
-                  bottom: 20,
-                  left: 100,
-                  child: Text("View 6")
-              )
             ],
-          )
-        ),
+          ),
+        )
       ),
     );
   }
