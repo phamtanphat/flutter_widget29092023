@@ -16,74 +16,30 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("My home page"),
       ),
-      body: Container(
-        constraints: BoxConstraints.expand(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(
-                        child: Container(
-                            color: Colors.red,
-                            child: Center(child: Text("A"))
-                        )
-                    ),
-                    Expanded(
-                        child: Container(
-                            color: Colors.blue,
-                            child: Center(child: Text("B"))
-                        )
-                    ),
-                    Expanded(
-                        child: Container(
-                            color: Colors.orange,
-                            child: Center(child: Text("C"))
-                        )
-                    ),
-                    Expanded(
-                        child: Container(
-                            color: Colors.teal,
-                            child: Center(child: Text("D"))
-                        )
-                    ),
-                  ],
-                )
-            ),
-            Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Expanded(
-                        child: Container(
-                            color: Colors.red,
-                            child: Center(child: Text("A"))
-                        )
-                    ),
-                    Expanded(
-                        child: Container(
-                            color: Colors.blue,
-                            child: Center(child: Text("B"))
-                        )
-                    ),
-                    Expanded(
-                        child: Container(
-                            color: Colors.orange,
-                            child: Center(child: Text("C"))
-                        )
-                    ),
-                    Expanded(
-                        child: Container(
-                            color: Colors.teal,
-                            child: Center(child: Text("D"))
-                        )
-                    ),
-                  ],
-                )
-            ),
-          ],
+      body: SafeArea(
+        child: Container(
+          constraints: BoxConstraints.expand(),
+          child: Stack(
+            children: [
+              Text("View 1"),
+              Align(
+                  alignment: Alignment.topRight,
+                  child: Text("View 2")
+              ),
+              Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text("View 3")
+              ),
+              Align(
+                  alignment: Alignment.bottomRight,
+                  child: Text("View 4")
+              ),
+              Align(
+                  alignment: Alignment.center,
+                  child: Text("View 5")
+              ),
+            ],
+          )
         ),
       ),
     );
