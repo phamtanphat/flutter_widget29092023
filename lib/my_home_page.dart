@@ -38,6 +38,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   alignment: Alignment.center,
                   child: Text("View 5")
               ),
+              Positioned(
+                  top: 100,
+                  bottom: 20,
+                  left: 100,
+                  child: Text("View 6")
+              )
             ],
           )
         ),
