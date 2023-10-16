@@ -17,37 +17,33 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("My home page"),
       ),
       body: SafeArea(
-        child: Container(
-          constraints: BoxConstraints.expand(),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Container(
-                width: 200,
-                height: 200,
-                decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(10)
-                ),
-                child: Stack(
-                  clipBehavior: Clip.none,
+          child: Container(
+              constraints: BoxConstraints.expand(),
+              child: Align(
+                alignment: Alignment.center,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Positioned(
-                      left: -20,
-                      child: Container(
-                        width: 100,
-                        height: 100,
+                    Container(
+                        color: Colors.red,
+                        child:
+                            Text("Red", style: TextStyle(color: Colors.white))),
+                    Container(
                         color: Colors.blue,
-                        child: Text("View B"),
-                      ),
-                    ),
+                        child: Text("Blue",
+                            style: TextStyle(color: Colors.white))),
+                    Container(
+                        color: Colors.green,
+                        child: Text("Green",
+                            style: TextStyle(color: Colors.white))),
+                    Container(
+                        color: Colors.orange,
+                        child: Text("Orange",
+                            style: TextStyle(color: Colors.white)))
                   ],
-                )
-              ),
-            ],
-          ),
-        )
-      ),
+                ),
+              ))),
     );
   }
 }
